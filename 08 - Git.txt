@@ -1,0 +1,49 @@
+Bash is a CLI 
+
+Popular Commands:
+     ls: list
+     cd: change directory     
+          cd ..               : previous directory
+          cd 'directory'  : 
+
+     pwd : print working directory
+     *      : all
+
+     dir : directory
+          mkdir : make directory 
+          touch : touch file.type for making file
+          open  : open file.type
+          rm      : rm file.type for remove file
+               rm -r : remove directory
+               rm -rf :remove by force
+
+GIT as version control:
+// $ represents command start
+
+     create local git repository : 
+     $git init
+     
+     #red is not yet in staging area
+     see what is in your staging area and their status: 
+     $git status
+
+     add a file to staging area: 
+     $git add file.type
+          add all files in dir: 
+          $git add .
+          remove from staged: 
+          $git rm --cached -r
+
+     commit under version control: $git commit -m "string: be precise, in present tense"
+     commit log: $git log
+
+     check differences b/w current file and last commit: $git diff
+
+     #see if checkout works with $git checkout .
+     rollback to previous version: $git checkout file.type
+          for all: $git checkout -- . OR $git checkout . 
+          specific commit: $git checkout [commit_id] file.type
+
+
+
+     

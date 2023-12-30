@@ -1,0 +1,293 @@
+//Arrays, class, Map, try/catch, date
+
+
+//Array: dynamic in nature, directly used for queue and stack
+let arr = [];
+let arr1 = [1, 2, 3, 4];
+arr.push(Number("1"));
+arr.unshift(Number("0"));
+//Array.shift("2");
+
+//2D Array:
+let array = [arr, arr1];
+
+//Spread operator:( ... )used for mathematical equations for arrays
+let max = Math.max(...arr1);
+arr.push(...arr1);
+console.log(arr, "\n", ...arr, "\n", max);
+
+//Rest parameters: using spread parameters in function parameter
+function sum_rest(x, y, ...numbers) {
+	let sum = 0;
+	for (let number of numbers) {
+		sum += number;
+	}
+	return x + y + sum;
+}
+
+//Array Methods:
+/* 
+     Callback: calling function from  a function--> sum(2,3, display)
+     forEach(function): invokes function for every element of the array
+     map(function): maps an array according to the return from a function 
+          with an array param
+     filter(function): filters an array with a condition
+     reduce(ftn): reduces an array into a single value
+     sort(): CHECK sort of an array how does it 
+	includes(value): checks if value is in array
+*/
+let count = 0;
+//Function for inner HTML: doesn't work
+function increaseBtn(count) {
+	count += 1;
+	doucument.getElementById("myLabel").innerHTML = count;
+}
+
+//Function expression:
+let myFtn = function () {
+	return;
+};
+document.getElementById("decreaseBtn").onclick = function () {
+	count -= 1;
+	document.getElementById("myLabel").innerHTML = count;
+};
+
+//Arrow Function: whatever!
+
+//Shuffle an array:
+let cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "K", "Q", "J"];
+shuffle(cards);
+
+console.log(cards);
+
+function shuffle(array) {
+	let cindex = array.length;
+	while (cindex != 0) {
+		let rindex = Math.floor(Math.random() * array.length);
+		cindex -= 1;
+
+		let temp = array[cindex];
+		array[cindex] = array[rindex];
+		array[rindex] = temp;
+	}
+	return array;
+}
+
+//nested function
+
+//Map: stores pairs of values in array, CHECK more functions
+const store = new Map([
+	["A", 0],
+	["B", 1],
+	["C", 2],
+	["D", 3],
+]);
+
+store.forEach((value, key) => console.log(`${key} $${value}`));
+//map functions: get(key), delete(key)
+
+//creating Objects:
+const car = {
+	model: "Toyota",
+	color: "black",
+	year: 2023,
+	//this: reference to a particular object
+	drive: function () {
+		console.log(`drive this ${this.model}`);
+	},
+};
+//console.log(car.model);
+//car.drive();
+
+//this: outside an object this refers to window
+console.log(this);
+
+//Class: creates an object
+class Store {
+	location = "Downtown Abbey";
+	//doesn't require totatstores to be extensiated but for static,
+	//Static: belongs to the class not the object
+	static totalstores = 0;
+	//constructor(): same
+	constructor() {
+		Store.totalstores += 1; //requiresd class name instead of this for static
+	}
+	exit() {
+		console.log(`exit`);
+	}
+}
+
+const storeA = new Store();
+const storeB = new Store();
+console.log(Store.totalstores);
+
+//follwing class is used to explain class, objects, inheritance, super, get, set
+//Inheritance: a child inherits methods and properties/attributes of parent class
+
+class Animal {
+	alive = true;
+	name = "Animal";
+
+	constructor(name, status) {
+		this.name = name;
+		this.alive = status;
+	}
+
+	eat() {
+		console.log(this.name, "eats");
+	}
+	sleeps() {
+		console.log(this.name, "sleeps");
+	}
+}
+class Rabbit extends Animal {
+	name = "Rabbit";
+
+	constructor(name, status, runSpeed) {
+		super(name, status);
+		this.runSpeed = runSpeed;
+	}
+	run() {
+		console.log(this.name, "runs");
+	}
+}
+class Hawk extends Animal {
+	name = "Hawk";
+
+	constructor(name, status, flySpeed) {
+		super(name, status);
+		this.flySpeed = flySpeed;
+	}
+	fly() {
+		console.log(this.name, "flies");
+	}
+}
+
+class Fish extends Animal {
+	name = "Fish";
+
+	constructor(name, status, swimSpeed) {
+		super(name, status);
+		this.swimSpeed = swimSpeed;
+		this._type = name;
+	}
+	swim() {
+		console.log(this.name, "swims");
+	}
+	//_attribute: used to write a protected attribute in a class for a getter method,
+	//Get:
+	get type() {
+		console.log("Trout");
+	}
+	//set(): binds a value to a function
+	set type(value) {
+		//i.e. doesn't matter if value is trout or not it will be set to Trout
+		console.log("Trout");
+		this._type = "Trout";
+	}
+}
+const fish = new Fish();
+const hawk = new Hawk();
+const rabbit = new Rabbit();
+rabbit.sleeps();
+
+//multiple methods
+let x = 23.1455643;
+x = Math.round(x).toString();
+console.log(x, typeof x);
+
+//Array of objects:
+const animals = [rabbit, fish, hawk];
+class Card {
+	constructor(value, suit) {
+		this.value = value;
+		this.suit = suit;
+	}
+}
+
+let cardArr = [];
+function cardsArray() {
+	let value = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "K", "Q", "J"];
+	let suit = ["Hearts", "Spades", "Diamonds", "Clubs"];
+	//tried using maping to make a key for ever value element in every suit, Doesn't work
+
+	let i = 0,
+		j = 0;
+	while (suit[suit.length - 1]) {
+		while (value[value.length - 1]) {
+			cardArr = new Card(value[j], suit[i]);
+			j++;
+		}
+		i++;
+	}
+	return cardArr;
+}
+
+//Unknown error: crashes browser
+/* 
+let arrayA = cardsArray();
+document.getElementById("myLabelA").innerHTML += arrayA;
+*/
+
+//Error Handling: for dangerous code especially an input
+//try/catch:
+try {
+	//console.leg("Blah!");
+} catch (error) {
+	console.log(error);
+}
+finally {		//always executes 
+}
+
+//throw:
+document.getElementById("decreaseBtn").onclick = function () {
+	let y = document.getElementById("myInput").value;
+	y = Number(y);
+
+	if (isNaN(y))
+		throw "Not a number try again";
+	if (y = "")
+		throw "Empty!"
+
+	console.log(y);
+};
+
+//for Time:
+//	set.timeout(functionname, time(in ms))
+//	clearTimeout(timer(set.timeout())): clears timeout
+//	setInterval(ftnname, time): sets a periodic interval
+let start = 0;
+// let  end = window.prompt("Stop watch at: ")
+// const timer = setInterval(stopwatch, 1000);
+function stopwatch() {
+	start += 1;
+	console.log(start);
+	if (end <= start) {
+		clearInterval(timer);
+	}
+}
+
+//Date: 
+/*
+	date(): gives current date
+	date(0): date at the start(1969)
+	date(value(in ms)): value + start
+	Date(2023, 0,1,10): shows given date, exempted values i.e(min and millseconds) are exempted
+
+	year = date.getFullYear();
+	month = getDate();
+	day = getDay();
+	date.getHours, minutes, seconds, milliseconds : same
+
+	to change a single value use: setMinutes();
+*/
+let date = new Date();
+console.log(date);
+
+//Asynchrounous code: using setTimeout()
+
+//console.time() => console.tiemEnd(): used as start and end to measure response time of
+//	the interval
+
+//Stopped at promises from JS_BroCode.txt
+//Do, promises and async after understanding asynchronous

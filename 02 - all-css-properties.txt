@@ -1,0 +1,107 @@
+SELECTORS:
+     CSS Selector:
+	     h1, body, head: for entire elements
+	     .className: for a class name
+	     #id: for an element id
+	     * : applies to everything
+
+     Attribute Selector:
+          CSS_selector[attribute]: selects any elemetnwith the attribute 
+
+     multiple classes: class="first second"
+          for class first and second
+
+     combining selectors:
+          eg=>  .class element{}; element, element{}, .class .class{},
+          
+          child:    selector>selector{}: for immediate child element
+          descendent:    selector selector{}: apply to any descendant
+          chaining: selectorselectorselector{}: to select an element with all the selector qualities
+               must start with an element
+
+          combining combination selectors: selectors selectorsselectors{}
+
+
+PROPERTIES:
+Color=>
+     color
+     background-color
+
+Font=>
+     units(px, pt, em, em, rem)
+          em: relative size where value of em is multiplies by the base/parent size of the 
+               element I.E for 20px, 2 em is 40px
+          rem: relative size to the root size of the HTML itself
+          px: 1/96 inch,  pt:1/72 inch
+     font-weight: normal, bold; lighter or bolder(relative to parent by 100 ); number(1 to 900)
+     font-family: type of font(syntax: "family", backup generic familyi.e sans-serif)
+     
+Align=> 
+     text-align: for text
+
+Box Model=>
+     element: height, width
+     border: thickness(px) style color ;
+     eg. border: 30px solid black
+          border-(top, width, etc)
+          eg. border-width: 1px 2px 3px 4px OR 2px 3px (for similar parallel sides
+
+     padding: distance between border and element
+          similar properties as border
+     margin: distance outside border
+          similar properties as border
+          margin in percentage means in percent to the parent of the element
+               i.e for a header 100% would mean 100% space in the <div> and 50% of div would 
+               mean half of a webpage
+
+Misc.=>
+     Circle: border-radius:50%
+     Object-fit: for adjesting the aspect ratio of img or video
+
+
+CSS Cascade=>
+     priority:             position<specificity<type<keyword
+          position:       top<bottom
+          specificity:   (selector) element<class<attribute<id
+          type:            external<internal<inline
+          !important:   keyword for most priority
+
+     positioning in a css file is important
+     
+CSS Positioning=>
+     static: default, flows as they would
+     relative: relative to the static posititon
+     absolute: relative to the parent element
+     fixed: relative to the html
+
+Z-index=>
+     value of element in z-index i.e -1 will be below everything, 
+
+CSS Display=> 
+     block: entire line
+     inline: next element starts from the same line    
+          i.e.  height and width cannot be set since display will ony cover the area if its content
+     inline-block: height and width can be changed
+     none: no display
+
+CSS Float=>
+     wrap text along an element
+     left, right: for text to wrap around element
+     clear: (left, right, both) to clear the float responsibility for any text element
+
+
+
+Media Query=> 
+     should be lower in position than the default css
+     max-width and min-width, 
+     screen(orientation: value)
+
+body {
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-color: blue;
+    }
+}

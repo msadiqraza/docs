@@ -1,0 +1,38 @@
+4 parts: endpoints, paths, parameters, authentification
+
+Endpoints and parameters:
+     GET api.__
+     used to access an api
+     https://v2.jokeapi.dev/joke/Dark?amount=10 //gives endpoint/[categories]?[parameters]
+     // subsequent parameters i.e queries come after "&" 
+
+JSON:
+     parse() //proper format
+     stringify() //minimizing to single string
+
+HEROKU: 
+change port in listener to process.env.PORT
+
+
+
+
+
+
+Mail Chimp:
+     Server response:
+     const client = require("@mailchimp/mailchimp_marketing");
+
+client.setConfig({
+	apiKey: "YOUR_API_KEY",
+	server: "YOUR_SERVER_PREFIX",
+});
+
+const run = async () => {
+	const response = await client.lists.addListMember("list_id", {
+		email_address: "Ebony_Brekke@gmail.com",
+		status: "pending",
+	});
+	console.log(response);
+};
+
+run();

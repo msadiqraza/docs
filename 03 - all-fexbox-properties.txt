@@ -1,0 +1,42 @@
+the width of the contaners in flexbox is decided by size of content
+Universal selector: * (hint: very helpfull when used with combination selection)
+vh: (view height) % view of screen
+PROPERTIES:
+     display: flex(100% width block), inline-flex
+     gap:
+     flex-direction: row(default), column, column-reverse,
+     flex-basis: (done in child element) the height/width( along the main axis i.e. 
+          depending on the direction) of the element
+
+     order: (done in child element) order of element in flexbox
+
+     gotta see www.appbrewery.github.io/flex-layout/
+     flex-wrap=>
+          html will go to the next line on wrap,
+          nowrap: no changes in layout
+          wrap: fit in next 
+
+     justify-content: content layout across main-axis
+          start, end, center, space evenly, space around, space between
+     
+     align-self: (works on a child element)  breaks away from the parent content
+     flex-sizing=>
+          content-width < width < flex-basis < min/max-width
+          i.e. the wishes of min/max-width are fulfilled first
+          flex-shrink: 0 or 1 ; flex-grow: 0 or 1 
+               sees if sizing applies to html with change in content-width
+               on child element
+
+          flex: (1 1 0) or (1) => grow shrink basis
+
+     to align items:
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+DOM, using HTML with JS
+     objects i.e. body, p, h1 have properties i.e. style, font, etc and methods i.e. click(), setAttribute()
+     ->method is for objects, function is indep. pf object
+
+properties:
+     innerHTML
+     style
+     firstChild
+
+methods:
+     click()
+     appendChild()
+     setAttribute()
+
+HTML attributes:
+     src, href, style, class, id
+
+Chrome Browser Tools:
+     debugger; //shows each step of the way of the process
+
+functions: 
+     selectors:
+          document.firstElementChild, lastElementChild //select by position
+          
+          querySelector("") //returns the first Element within the document that matches the specified selector,
+               //useful for tagname, #id, .class
+               //Combining selectors: querySelector("") is same as CSS rules in quotes
+          querySelectorAll() //list of all elements matching the specified selectors
+          
+          getElementbyId //select by id
+
+          getElementByTagName //collection of objects with same tag name i.e. object name
+          getElementByTagName(element)[no. in arr].style //for a particular object in array
+
+          getElementbyClassName(element)[0] //even if class only has one element [0] is added
+
+          //bootstraping by javascript
+          (element).classList.add/remove/toggle ("class") //and then you can  just add the properties to the class using stylesheet
+
+
+     manipulators:
+
+          //manipulating text:
+          (element).innerHTML //gives the innerHTML of the element, useful to change the HTML using javascript
+          (element).textContent //change the text content inside the HTML element
+
+          //manipulating attributes:
+          (element).getAttribute("attribute") //get a single attribute, when getAttribute("attribute") is not given answer is null 
+          (element).setAttribute("attribute", "value") //set the attribute
+
+          (element).style.colour //to change style options; here colour
+          (element).click //performs click action on element
+          
+          (element).onClick //useful for buttons; after action
+
+object model of DOM:
+     (element).colour //getter for properties of object element
+     (element).colour = "red" //setter for properties of object
+
+     #add classes to objects to make changes (used to seperate js and css properties)
+     (element).classList.add/remove/toggle ("class") //and then you can  just add the properties to the class using stylesheet
+
+<bold> Advanced javascript:</bold>
+
+functions: 
+     addEventListener(type , listener) //performs lis function when a paticular type of event is performed, 
+          //listener event function is written without () i.e. function is not called
+          //i.e. (button).addEventListener("click", function)
+          //addEventListener can be used to change different elements into buttons by assigning them click function
+
+          //anonymous function
+          Option1:  (button).addEventListener("click", function1(){
+               alert("java");
+          });
+          Option2: (button).addEventListener("click", function2);
+          function function2(){
+               alert("java");
+          };
+     see in mozilla notes
+
+     (element).onClick(){
+          function;
+     } //can also be used in place of addEventListener
+
+Functions as arguments: i.e. Higher order functions
+     example: //notice how operator does not require ();
+     function calculator(a, b, operator){
+          return operator(a, b);
+     }
+     function add(a, b){
+          return a+b;
+     }
+     function multiply(a, b){
+          return a*b;
+     }
+
+this element:
+     this element is helpful in getting the element in javascript
+     eg:
+          function a(){
+               console.log(this);
+          }
+          will give what a is called for in HTML
+
+Objects in js:
+var object=
+{
+     name: "a",
+     age: 20,
+     languages:['a', 'b']
+}
+
+Constructor function:
+function Constructer(name, age, dothis){
+     this.name = name;
+     this.age = age;
+     this.dothis = function(){
+          do();
+     }
+}
+Constructer constructor = new Constructer("alice", 19, die);
+
+Animation to website:
+     add class

@@ -1,0 +1,47 @@
+express is a framework of Node.js
+     npm install express
+WebDocs: 
+     www.expressjs.com/ 
+
+Make a server:
+     in Bash: 
+          node server.js
+          For auto reoload:
+               nodemon server.js
+
+     express = require("express")
+     app = express();
+     app.listen(port: 3000) //see docs 
+
+ 
+
+     Request and Response:
+          app.get(root: "/", function(request, response){
+               response.send("Hello") //for individual bits of html
+          }) //response sends data
+
+          //handling every address
+          // Middleware to handle all GET requests other than "/"
+          app.get('*', (req, res) => {
+               res.send('NOT AVAILABLE');
+          });
+
+          //for proofing the directory in case of server
+          //for responding with entire html file
+          app.get(root: "/", function(request, response){
+               response.sendFile(__dirname/index.html)
+          })
+
+          multiple res:
+          res.write("hdf");
+          res.write("dj");
+          res.send();
+
+     POST: 
+          in HTML: body>element must have a <method="post" action="/"> //action is default for / btw
+
+          to change post dynamically, i.e change index.html file we use client side js
+               see calculator
+
+Express Folder:
+     Udemy WebDev\05 - Node.js\Express

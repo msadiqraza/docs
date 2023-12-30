@@ -1,0 +1,110 @@
+what is fetch();
+body-parser
+before, after in css
+
+required, autofocus html properties
+can the files in gitignore still be used by project; probably not
+
+
+
+
+
+
+// ========================================================
+const apiKey = "343f95d6b2ba5b9cd7766e8d21002908-us8";
+const userKey = "33e80357d3";
+
+
+const client = require("@mailchimp/mailchimp_marketing");
+client.setConfig({
+	apiKey: "3b4f5b671f70c91b697371e721940c61-us14",
+	server: "us14",
+});
+
+
+const run = async () => {
+	const response = await client.lists.addListMember("1", {
+		email_address: "Ebony_Brekke@gmail.com",
+		status: "subscribed",
+	});
+     console.log(response);
+     
+};
+
+run();
+
+// ======================================
+const express = require("express");
+const request = require("request");
+const bodyParser = require("body-parser");
+const https = require("https");
+const { constants } = require("buffer");
+
+const app = express();
+const port = "8080";
+
+app.use(bodyParser.urlencoded({ extended: true }));
+//to use static tools i.e. local images and css, we need
+app.use(express.static("resources")); //generally a public folder
+
+app.get("/", (req, res) => {
+	res.sendFile(__dirname + "/resources/index.html");
+});
+
+app.post("/", (req, res) => {
+	const firstName = req.body.firstName;
+	const lastName = req.body.lastName;
+     const email = req.body.email;
+     
+     console.log(firstName, lastName, email);
+
+     const apiKey = "343f95d6b2ba5b9cd7766e8d21002908-us8";
+	const userKey = "33e80357d3";
+     const url = `https://us8.api.mailchimp.com/3.0/lists/${userKey}/members`;
+
+     var status;
+     var parsedData = {};
+
+     //post is important for options
+     const options = {
+          method: "POST",
+          auth: `msr:${apiKey}`,
+     };
+
+	var data = {
+		members: [
+			{
+				email_address: "msadiqraza@email.com",
+				status: "subscribed",
+				merge_fields: {
+					FNAME: firstName,
+					LNAME: lastName,
+				},
+			},
+		],
+	};
+     var jsonData = JSON.stringify(data);
+
+     const request = https.request(url, (response) => {
+          response.on("data", (chunk) => {
+               parsedData = JSON.parse(chunk);
+               status = parsedData.status;
+               
+               console.log(parsedData);
+          });
+     });
+     
+     request.write(jsonData);
+
+     if (status == 200) {
+          res.sendFile(__dirname + "/resources/success.html");
+     } else {
+          res.sendFile(__dirname + "/resources/failure.html");
+     }
+
+     request.end();
+});
+
+app.listen(port, () => {
+	console.log("Server running at: " + port);
+});

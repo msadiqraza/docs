@@ -1,0 +1,32 @@
+javascript framework uses methods
+
+CDN:
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+
+document:
+     https://api.jquery.com/
+
+Popular code:
+$("") == document.querySelector("")
+// querySelectorAll is not necessary
+$("p:this/first/first-child") //for this, first p element, and first child of p element
+
+$().css(property, value)
+$().addClass()
+$().text()
+$().html() //innerHTML
+
+classlist:  $().attr("class")
+addEventListener: $().click/ keypress/ on(event, function)
+
+adding elements: 
+     prepend, append, before, after //in element before text, in element after text, before element, after element
+
+Animation:
+     hide, show, toggle, fadeout, fadein, slideup, slidedown, 
+     animate(
+          {
+               opacity:
+               margin:
+          }
+          )

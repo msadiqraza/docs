@@ -1,0 +1,21 @@
+flexbox is flexible while grid makes equal grids,
+for 2d, lets you overlay items
+Properties:
+     display:
+     grid-template-columns:
+     grid-template-rows: auto minmax(400px, 5fr) repeat(times, size)
+     # for rows template 1fr is considered fit to size pxs of an item, 
+     in columns 1fr is 1fr of the total screen pxs
+     grid-auto-rows: for any rows we haven't compensated for in the sizing
+
+     grid-column: span 2 # will span 2 cells in the grid
+          grid-column-start: 0 # from which line should the grid start
+          grid-column-end: 2 # where should the grid end
+          # for these two properties +1 and -1 represent LHS and RHS respectively
+     #same for grid-row
+
+     grid-area: row-start / column-start / row-end / column-end
+     # a 4-coordinate layout
+
+     order: #position items, ascending
+     #overlay: #background-color: hexcode+transparency value(2digit)

@@ -1,0 +1,49 @@
+javascript framework
+
+javascript can access the internet while node.js is mainly used to access the computer
+always use asynchronous methods 
+window is global in node
+
+modularity:
+     every app is a module i.e. container
+     if you want to use something in that module you have to export internet
+          this is the basis of Node.js
+
+     exports: 
+          module.exports.newName = element //in npm file
+          require(npmFile) //to import
+
+     wrapping: node wraps our code in a ftn
+      (function (exports, require, module, __filename, __dirname) {
+          //module code
+     });
+
+Built-in modules:
+     path, os, fs, events, http
+     events: imp methods: 
+          emit(event) //signalling an event has happened; raise an event
+               or, emit(event, eventArg): generally; eventArg can be {id:, url:} 
+          on(event, function(arg)); //listener; listener should be called first 
+
+          eventEmitter is a class with a number of methods. So, 
+          Step1: const eventEmitter = require('events');
+          Step2: var emitter = new eventEmitter();
+
+          EventEmitter is very imp. #learn how to use emitter in different modules together
+
+node in git / CLI:
+     node          : a console appears
+     node file.js : file is executed
+     .exit or (ctrl)+(c) : exit
+     {half word}(tab)(tab)             : all the commands that can be used
+          con(tab)(tab)                   : gives all options
+
+Arrow function: used instead of silent function
+function(arg){}; can be (arg)=>{};
+
+port:
+     server.address().port;
+
+
+package.json:
+     npm init

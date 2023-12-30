@@ -1,0 +1,44 @@
+bootstrap framework=>
+     no need to use @media
+     https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
+Layout:
+
+     breakpoints: -sm -md -lg -xl -xxl -fluid
+     columns: 
+          12 cells in a line, col-4 represents 1/3
+          #change alignment of each individual element
+          align-self-start/ center/ end
+          #justify content:
+          justify-content-start/ center/ end/ around/ evenly/ between
+          #wrapping
+          1) col-9     2) col-4 then col-4 will be wrapped to the next line
+
+components:
+
+     buttons:
+          btn: btn-primary/ secondary/ success/ danger/ warning/ info/ light/ dark/ link
+                    blue/ grey/ green/ red/ yellow/ lightblue
+
+     card:
+     <div class="card" style="width: 18rem;">
+     <img src="flower.jpg" class="card-img-top" alt="...">
+     <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+     </div>
+     </div>
+
+     Nav Bar: 
+          just is 
+
+spacing: 
+     eg. mx-5 is margin for x axis i.e. left and right with $spacer*3
+     margin=m, padding=p
+     t/ b/ s/ e/ x/ y
+     size= 0-5 / auto
+
+dark mode:
+     <html lang="en" data-bs-theme="dark" >
