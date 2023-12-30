@@ -4,15 +4,15 @@ Welcome to my repository for web development notes and projects! This repository
 
 ## Table of Contents
 
-00 - Instructions
-01 - Client / 01 - HTML
-01 - Client / 01 - CSS
-01 - Client / 01 - Page Structures
-01 - Client / 01 - JavaScript
-02 - Server / 05 - Node.js
-02 - Server / 06 - Express
-02 - Server / 07 - APIs
-02 - Server / 08 - Git
+00 - Instructions;
+01 - Client / 01 - HTML;
+01 - Client / 01 - CSS;
+01 - Client / 01 - Page Structures;
+01 - Client / 01 - JavaScript;
+02 - Server / 05 - Node.js;
+02 - Server / 06 - Express;
+02 - Server / 07 - APIs;
+02 - Server / 08 - Git;
 
 ## About
 
@@ -32,7 +32,7 @@ Included is a list of projects I've implemented based on the courses.
 
 The notes are organized with sufficient examples and mini-projects.
 
-/00-Instructions
+[00 - Instructions](#Tableofcontents)
 
 
 ## How to Use
