@@ -32,7 +32,7 @@ Included is a list of projects I've implemented based on the courses.
 
 The notes are organized with sufficient examples and mini-projects.
 
-[00 - Instructions](#Table of contents)
+[00 - Instructions](#Tableofcontents)
 
 
 ## How to Use
