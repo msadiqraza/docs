@@ -55,6 +55,11 @@ in a branch request, branch takes precedence over master i.e. branch changes are
 
 $ git merge [branch_name]
 
+==============================================
+FORKING: 
+having a copy of someone's repository on your github
+PULL request is made if someone wants to add some changes to your repository
+
 
 
 
