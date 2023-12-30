@@ -1,0 +1,26 @@
+body {
+     font-family: Arial, Helvetica, sans-serif;
+     color: rgb(26, 228, 144);
+     background-color: rgb(78, 77, 77);
+
+     display: grid;
+     justify-content: center;
+     height: 100vh;
+}
+
+.heading {
+     font-size: 56px;
+}
+
+footer {
+     align-content: center;
+     justify-content: center;
+}
+
+.container{
+display:flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
+

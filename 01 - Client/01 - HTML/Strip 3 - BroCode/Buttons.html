@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<!--in line 10, align does not work see why, also used many align properties in style but it does not work p.s it works in header
+     see line 19, also adding js functionality in html-->
+	<body>
+		<a href="https://www.google.com" align="center">
+			<button
+				onclick="doSomething()"
+				style="
+					color: #00ff00;
+					background-color: black;
+					font-size: xx-large;
+					border-radius: 5px;
+				"
+			>
+				Google
+			</button>
+		</a>
+		<h3 id="h3.1">Chamfer</h3>
+		<script>
+			function doSomething() {
+				document.getElementById("h3.1").innerHTML = "goodbye";
+			}
+		</script>
+	</body>
+</html>

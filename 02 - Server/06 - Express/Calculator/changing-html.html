@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+     <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Edit HTML Element</title>
+     </head>
+
+     <body>
+          <h2 id="dynamicHeading">Edit HTML Element</h2>
+
+          <form id="editForm" action="/edit" method="post">
+               <label for="elementValue">New Value:</label>
+               <input type="text" id="elementValue" name="elementValue" required>
+               <button type="submit">Submit</button>
+          </form>
+
+          <script>
+               // Function to update the h2 element with a new value
+               function updateHeading(newValue) {
+                    document.getElementById('dynamicHeading').innerText = newValue;
+               }
+
+               // Event listener for the form submission
+               document.getElementById('editForm').addEventListener('submit', function (event) {
+                    event.preventDefault(); // Prevent the form from submitting normally
+
+                    // Get the form data
+                    const formData = new FormData(event.target);
+                    const newValue = formData.get('elementValue');
+
+                    // Use fetch to send a POST request to the server
+                    fetch('/edit', {
+                         method: 'POST',
+                         headers: {
+                              'Content-Type': 'application/x-www-form-urlencoded',
+                         },
+                         body: new URLSearchParams({ elementValue: newValue }),
+                    })
+                         .then(response => response.text())
+                         .then(data => {
+                              // Update the h2 element with the new value
+                              updateHeading(newValue);
+                              console.log(data); // Log the server response
+                         })
+                         .catch(error => console.error('Error:', error));
+               });
+          </script>
+     </body>
+
+</html>

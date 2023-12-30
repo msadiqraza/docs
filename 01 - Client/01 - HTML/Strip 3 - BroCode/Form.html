@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!--
+			somethings to consider: the for of the label should be equal to the id of input for ease,
+			placeholder is bascially prompt text, reuired is a boolean, 
+			<div> can also work as <br>, in radio to check only 1 box use the same name for the buttons
+			also see <select> which works as a combobox 
+		-->
+		<form>
+			<div>
+				<label for="firstname"> First Name: </label>
+				<input type="text" id="firstname" placeholder="Saturo" required />
+			</div>
+			<br />
+
+			<div>
+				<label for="lastname"> Last Name: </label>
+				<input type="text" id="lastname" name="lastname" placeholder="Gojo" />
+			</div>
+			<br />
+
+			<!--predefined buttons, using them is similar just see the video-->
+			<input type="reset" />
+			<input type="submit" />
+			<input type="password" />
+			<br /><br /><br />
+			<div><input type="checkbox" /></div>
+			<div><input type="button" /></div>
+			<div><input type="color" /></div>
+			<div><input type="url" /></div>
+			<div><input type="text" /></div>
+		</form>
+	</body>
+</html>

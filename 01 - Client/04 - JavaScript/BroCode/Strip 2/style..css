@@ -1,0 +1,53 @@
+/* 
+	3 ways to use css: INLINE, INTERNAL, EXTERNAL
+              INLINE: is used in line 25 to create specific style for one division
+              INTERNAL: is used in line 10 to use css in style element 
+              EXTERNAL: is used externally in a dedicated .css , and linked through in the head
+	CSS recognizes the name of the element i.e. p or h1 
+		or the class of the elements i.e. .header or the id of the element i.e. #para2 (it requires a '#' to specify the id)
+
+	using live server the linked font does not work properly often
+*/
+.header {
+	color: rgba(52, 31, 212, 0.713);
+	position: sticky;
+	top: 0px;
+	background-color: transparent;
+	font-weight: lighter;
+	align-content: center;
+	;
+
+}
+
+#para2 {
+	font-family: "bungee spice", "consolas";
+	/*consolas is the backup font*/
+	/*the default font color and weight can not be overriden using the following attributes */
+	font-weight: 1000 lighter;
+	/* here 1000 is overshadowed*/
+	color: rgb(155, 137, 137);
+}
+
+p {
+	border-style: outset;
+	padding: 10px;
+	border-radius: 10px;
+	font-weight: 600;
+	/*offset*/
+}
+
+body {
+	background : center/200% url("/Sample/Test Images/207678.jpg") ;
+	
+	
+	background-attachment :scroll;
+}
+
+/*background: linear-gradient(skyblue, #ff0ed7);
+	background :-o-linear-gradient(black, blue);
+	background-repeat: no-repeat;
+	
+	
+	
+	*/
+	
