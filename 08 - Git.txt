@@ -49,6 +49,9 @@ GIT as version control:
           for all: $git checkout -- . OR $git checkout . 
           specific commit: $git checkout [commit_id] file.type
 
+          can also use SWITCH to switch between branches
+          $ git switch [branch_name]
+
      REBASING:
           way of integrating one branch into another, different from merge
           changing the base of your branch from one commit to another making it appear as if you'd 
