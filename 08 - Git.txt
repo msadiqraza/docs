@@ -35,7 +35,12 @@ GIT as version control:
           $git rm --cached -r
 
      commit under version control: $git commit -m "string: be precise, in present tense"
-     commit log: $git log
+     commit log: $git log 
+
+     DELETE git branch
+     $ git branch --delete [branch_name]
+          for remote branch
+          $ git branch --delete --remote origin/[branch_name]
 
      check differences b/w current file and last commit: $git diff
 
@@ -43,6 +48,15 @@ GIT as version control:
      rollback to previous version: $git checkout file.type
           for all: $git checkout -- . OR $git checkout . 
           specific commit: $git checkout [commit_id] file.type
+
+     REBASING:
+          way of integrating one branch into another, different from merge
+          changing the base of your branch from one commit to another making it appear as if you'd 
+          created your branch from a different commit
+          $ git --rebase      # confirm
+          $ git rebase --quit
+
+     
 
 
 
