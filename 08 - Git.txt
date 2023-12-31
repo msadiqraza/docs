@@ -42,12 +42,21 @@ GIT as version control:
           for remote branch
           $ git branch --delete --remote origin/[branch_name]
 
-     check differences b/w current file and last commit: $git diff
+     DELETE git repository without deleting local files:
+     $git rm --cached -r [directory_to_remove]
 
-     #see if checkout works with $git checkout .
-     rollback to previous version: $git checkout file.type
-          for all: $git checkout -- . OR $git checkout . 
-          specific commit: $git checkout [commit_id] file.type
+     check differences b/w current file and last commit: 
+     $git diff
+
+     rollback to previous version: 
+     $git checkout file.type
+
+          for all: 
+          $git checkout -- . 
+          $git checkout . 
+
+          specific commit: 
+          $git checkout [commit_id] file.type
 
           can also use SWITCH to switch between branches
           $ git switch [branch_name]
@@ -59,7 +68,9 @@ GIT as version control:
           $ git --rebase      # confirm
           $ git rebase --quit
 
-     
+     FIXING UPSTREAM:
+     used whem remote upstream is gone; where you push files
+     $ git branch --unset-upstream
 
 
 
