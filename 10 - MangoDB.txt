@@ -1,0 +1,103 @@
+CLI:
+see docs: https://www.mongodb.com/docs/manual/crud/
+npm: $npm install mongodb@4.1
+
+show all db:
+$ show dbs
+
+use db:
+$ use <db>
+
+current db:
+$ db
+
+make collection:
+$ db.<collection_name>.insertOne(...)
+
+see db collections:
+$ show collections
+
+INSERT/ CREATE:
+$ db.<collection_name>.insertOne({})
+
+READ: 
+# projection is the key we want back, default *
+
+$ db.<collection_name>.find({query}, {projetion}).limit(<int>)
+     read all:
+     $ db.<collection_name>.find()
+
+     example, find where id is 1 and 2:
+     db.<collection_name>.find( { _id : { $in : [ 1, 2 ] } } )
+
+     using true and false, if <collection_name> has the attr or not:
+     
+     # only name on id
+     $ $ db.<collection_name>.find( { name: 1, _id:0 } )
+
+UPDATE:
+
+     for one:
+     $ db.<collection_name>.updateOne({selector}, {$set: {key:value}});
+
+     for all:
+     $ db.<collection_name>.updateOne({selector}, {$set: {key:value}});
+
+DELETE:
+
+     for one:
+     $ db.<collection_name>.deleteOne({selector});
+
+     for all:
+      $ db.<collection_name>.deleteMany({selector});
+
+=======================================================
+RELATIONSHIPS:
+
+IMBED: 
+# best for 1-Many
+# review document array imbedded
+
+db.<collection_name>.insert(
+     {
+          _id: 1, 
+          name: " ",
+          reviews: [
+               {
+                    author: " ",
+                    rating: 5, 
+                    review: " "
+               }
+          ]
+     }
+)
+
+TidBits:
+     null bracket {} is for all *
+     $set for update 
+     $in for array in query
+
+
+const { MongoClient } = require("mongodb");
+
+// Replace the uri string with your connection string.
+const uri = "<connection string uri>";
+
+const client = new MongoClient(uri);
+
+async function run() {
+  try {
+    const database = client.db('sample_mflix');
+    const movies = database.collection('movies');
+
+    // Query for a movie that has the title 'Back to the Future'
+    const query = { title: 'Back to the Future' };
+    const movie = await movies.findOne(query);
+
+    console.log(movie);
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);

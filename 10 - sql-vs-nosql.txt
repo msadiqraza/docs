@@ -1,0 +1,24 @@
+store persistent data
+best db for node.js
+
+SQL: 
+structured query language
+     mysql, postgrespl
+data stored in table (table structure)
+requires schema
+bad with irregular data i.e. exception data to some entries
+better at relationships
+     this is like building a tower, easier to build floors after the first but increasingly
+     difficult once alot of floors are added
+
+
+NoSQL:
+not only structured query language 
+     mangodb, redis
+data stored as json object, (document structured)
+doesn't require schema, flexible
+when your data is not really predefined this is better
+bad at relationships
+DISTRBUTED system
+     this is like building apartments, foundation and relationships are harder but 
+     lesser problems as apartments increase
