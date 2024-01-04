@@ -1,0 +1,11 @@
+good docs, find everything:
+https://mongoosejs.com/docs
+
+
+The permitted SchemaTypes are:
+String, Number, Date, Buffer, Boolean, Mixed, ObjectId, Array, Decimal128, 
+Map, UUID
+
+instance methods are possible in Schema
+
+Validators: https://mongoosejs.com/docs/schematypes.html#schematype-options
