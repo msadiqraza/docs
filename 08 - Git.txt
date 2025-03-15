@@ -17,6 +17,12 @@ Popular Commands:
                rm -r : remove directory
                rm -rf :remove by force
 
+	save history:
+	$ history -w filename.txt
+	read history: 
+	# history -r file.txt
+	
+
 GIT as version control:
 // $ represents command start
 
@@ -32,11 +38,12 @@ GIT as version control:
           add all files in dir: 
           $git add .
           remove from staged: 
-          $git rm --cached -r
+          $git rm --cached git
 
      commit under version control: $git commit -m "string: be precise, in present tense"
      commit log: $git log 
 
+================================================
      DELETE git branch
      $ git branch --delete [branch_name]
           for remote branch
@@ -48,7 +55,8 @@ GIT as version control:
      check differences b/w current file and last commit: 
      $git diff
 
-     rollback to previous version: 
+================================================
+     ROLLBACK to previous version: 
      $git checkout file.type
 
           for all: 
@@ -61,16 +69,92 @@ GIT as version control:
           can also use SWITCH to switch between branches
           $ git switch [branch_name]
 
-     REBASING:
-          way of integrating one branch into another, different from merge
-          changing the base of your branch from one commit to another making it appear as if you'd 
-          created your branch from a different commit
-          $ git --rebase      # confirm
-          $ git rebase --quit
+===============================================
+REBASING:
+     way of integrating one branch into another, different from merge
+     changing the base of your branch from one commit to another making it appear as if you'd 
+     created your branch from a different commit
+     $ git --rebase      # confirm
+     $ git rebase --quit
 
-     FIXING UPSTREAM:
-     used whem remote upstream is gone; where you push files
-     $ git branch --unset-upstream
+===============================================
+FIXING UPSTREAM:
+used whem remote upstream is gone; where you push files
+$ git branch --unset-upstream
+
+set upstream
+$ git push -u origin [branch_name]
+
+===============================================
+Tidbits: 
+repository network contains all commit by data
+master branch saves your main progress
+syncing local (.git) and remote (github) repository is possible
+
+===============================================
+Create repository:
+$ git init
+$ git add README.md
+$ git commit -m "first commit"
+$ git remote add origin [repository_address]
+$ git push -u origin master
+
+Explaination:
+# git initialization
+# adding a readme.md file optional
+# commiting to git all files in dir, for staging area use git add before commit
+# adding commited files to a remote repository, origin name of remote changeable but not recommended
+# pushes local to remote, syntax: git push [linker] [name of remote] [name of branch]
+
+Push Existing git repository: i.e. local to remote
+$ git remote add origin [repository_address]
+$ git push -u origin master
+
+==============================================
+Git Ignore:
+files starting with .file.type are hidden files
+used for handling sensitive and not useful hidden files
+get a gitIgnore template from github/gitignore repository
+
+Procedure:
+     write name of files to ignore i.e $secrets.txt
+     ignore all files of specific type: $*.type
+     # for comment
+
+==============================================
+Git Clone:
+$ git clone [repository_address]
+
+checkout the project's commit history
+$ git log
+
+==============================================
+BRANCHING:
+sort of like an off-track experimental branch derived from a version of the master branch
+MERGE to add it to master.
+used for testing and reviewing the project before adding it to the master branch
+
+$ git branch                                  # all branches
+$ git branch [branch_name]         # make branch string
+
+MERGE: #in master branch
+merge doen't delete the branch
+in a branch request, branch takes precedence over master i.e. branch changes are implemented
+
+$ git merge [branch_name]
+
+==============================================
+FORKING: 
+having a copy of someone's repository on your github
+PULL request is made if someone wants to add some changes to your repository
+
+
+
+
+
+
+
+
 
 
 

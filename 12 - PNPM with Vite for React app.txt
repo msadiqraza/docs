@@ -1,0 +1,11 @@
+npm i -g pnpm
+
+pnpm create vite <your folder name>
+
+choose
+choose
+
+cd <your folder name>
+
+pnpm install
+pnpm dev

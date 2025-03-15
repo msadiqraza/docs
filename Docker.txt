@@ -1,0 +1,11 @@
+# sees images
+docker images
+
+docker build -t image_name
+
+# runs locally local:host or opposite
+docker run -p 5000:5000 image_name
+
+docker tag image_name username/repo_name
+
+docker push username/repo_name

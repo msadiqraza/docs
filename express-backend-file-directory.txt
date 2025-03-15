@@ -1,0 +1,30 @@
+my-express-ts-server/
+├── src/
+│   ├── controllers/       # Contains request handlers for routes
+│   │   ├── userController.ts
+│   │   └── authController.ts
+│   ├── middlewares/       # Custom middleware functions
+│   │   └── authMiddleware.ts
+│   ├── models/            # Database models or interfaces
+│   │   └── userModel.ts
+│   ├── routes/            # Route definitions
+│   │   ├── userRoutes.ts
+│   │   └── authRoutes.ts
+│   ├── services/          # Business logic and interactions with models
+│   │   └── userService.ts
+│   ├── utils/             # Utility functions and helpers
+│   │   └── logger.ts
+│   ├── config/            # Configuration files (database, environment variables)
+│   │   └── dbConfig.ts
+│   ├── types/             # Custom TypeScript types and interfaces
+│   │   └── index.d.ts
+│   ├── index.ts           # Main entry point for the application
+│   └── app.ts             # Express app configuration and middleware setup
+├── tests/                 # Tests for your application
+│   ├── unit/              # Unit tests
+│   └── integration/       # Integration tests
+├── .env                   # Environment variables
+├── .gitignore             # Files to ignore in Git
+├── package.json           # Project metadata and dependencies
+├── tsconfig.json          # TypeScript configuration
+└── README.md              # Project documentation
